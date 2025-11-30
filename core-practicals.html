@@ -707,7 +707,7 @@
             const studentName = document.getElementById('studentViewHeading').textContent;
             const doc = generateStudentPDF(studentName);
             if (doc) {
-                const filename = `${sanitizeFilename(studentName)}_CorePracticals.pdf`;
+                const filename = `${studentName}.pdf`;
                 doc.save(filename);
             }
         }
@@ -855,7 +855,7 @@
                 const doc = generateStudentPDF(studentName);
                 if (doc) {
                     const pdfBlob = doc.output('blob');
-                    const filename = `${sanitizeFilename(studentName)}_CorePracticals.pdf`;
+                    const filename = `${studentName}.pdf`;
                     zip.file(filename, pdfBlob);
                 }
             }
